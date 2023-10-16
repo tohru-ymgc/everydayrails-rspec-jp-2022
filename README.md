@@ -1,3 +1,10 @@
+# RSpec学習リポジトリ
+
+1. `docker compose up -d`
+2. `docker compose exec web bash`
+3. `bin/setup`
+4. `bin/rails s -b 0.0.0.0`
+
 [![RSpec](https://github.com/JunichiIto/everydayrails-rspec-jp-2022/actions/workflows/rspec.yml/badge.svg)](https://github.com/JunichiIto/everydayrails-rspec-jp-2022/actions/workflows/rspec.yml)
 
 # *Everyday Rails Testing with RSpec* sample application (2022 Japanese edition)
