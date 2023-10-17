@@ -1,2 +1,4 @@
-module Api::ProjectsHelper
+module Api
+  module ProjectsHelper
+  end
 end

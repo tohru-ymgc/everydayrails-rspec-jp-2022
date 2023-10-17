@@ -14,18 +14,18 @@ class User < ApplicationRecord
   after_create :send_welcome_email
 
   def name
-    [first_name, last_name].join(" ")
+    [first_name, last_name].join(' ')
   end
 
   geocoded_by :last_sign_in_ip do |user, result|
-    if !user.local? && geocode = result.first
+    if !user.local? && (geocode = result.first)
       user.location = "#{geocode.city}, #{geocode.state}, #{geocode.country}"
       user.save
     end
   end
 
   def local?
-    ["localhost", "127.0.0.1", "0.0.0.0"].include? last_sign_in_ip
+    ['localhost', '127.0.0.1', '0.0.0.0'].include? last_sign_in_ip
   end
 
   def after_database_authentication
@@ -35,9 +35,9 @@ class User < ApplicationRecord
   private
 
   def ensure_authentication_token
-    if authentication_token.blank?
-      self.authentication_token = generate_authentication_token
-    end
+    return if authentication_token.present?
+
+    self.authentication_token = generate_authentication_token
   end
 
   def generate_authentication_token

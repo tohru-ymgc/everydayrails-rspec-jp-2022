@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
   protected
 
   def configure_permitted_parameters
-    keys = [:first_name, :last_name]
+    keys = %i[first_name last_name]
     devise_parameter_sanitizer.permit(:sign_up, keys: keys)
     devise_parameter_sanitizer.permit(:account_update, keys: keys)
   end
@@ -15,8 +15,8 @@ class ApplicationController < ActionController::Base
   end
 
   def project_owner?
-    unless @project.owner == current_user
-      redirect_to root_path, alert: "You don't have access to that project."
-    end
+    return false if @project.owner == current_user
+
+    redirect_to root_path, alert: "You don't have access to that project."
   end
 end
