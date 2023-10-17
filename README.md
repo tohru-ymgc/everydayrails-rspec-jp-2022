@@ -5,9 +5,15 @@
 3. `bin/setup`
 4. `bin/rails s -b 0.0.0.0`
 
+## 留意点
+
+- generateしたファイルの権限変更
+  - `sudo chown -R $USER:$USER .`
+
+
 [![RSpec](https://github.com/JunichiIto/everydayrails-rspec-jp-2022/actions/workflows/rspec.yml/badge.svg)](https://github.com/JunichiIto/everydayrails-rspec-jp-2022/actions/workflows/rspec.yml)
 
-# *Everyday Rails Testing with RSpec* sample application (2022 Japanese edition)
+## *Everyday Rails Testing with RSpec* sample application (2022 Japanese edition)
 
 Sample Rails application for *[Everyday Rails Testing with RSpec](https://leanpub.com/everydayrailsrspec): A
 Practical Approach to Test-driven Development* by Aaron Sumner. This
