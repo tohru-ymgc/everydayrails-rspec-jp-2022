@@ -4,6 +4,7 @@
 2. `docker compose exec web bash`
 3. `bin/setup`
 4. `bin/rails s -b 0.0.0.0`
+5. `bundle exec rspec`でRSpec実行
 
 ## 留意点
 
